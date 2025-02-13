@@ -1,0 +1,2 @@
+playerctl pause
+betterlockscreen -l

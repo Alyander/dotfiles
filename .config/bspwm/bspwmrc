@@ -1,0 +1,28 @@
+#! /bin/sh
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+
+bspc config border_width         2
+bspc config window_gap          12
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config normal_border_color "#4c566a"
+bspc config active_border_color "#4682B4"
+bspc config focused_border_color "#296096"
+bspc config presel_feedback_color "#595B82"
+bspc config focus_follows_pointer true
+#bspc config pointer_modifier    super
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+feh --bg-fill /home/anatolii/walls/1351258.png
+pulseaudio --start &
+picom &
+xsetroot -cursor_name left_ptr &
+polybar &
+setxkbmap -model pc104 -layout us,ru,ua -variant qwerty -option grp:alt_shift_toggle
+

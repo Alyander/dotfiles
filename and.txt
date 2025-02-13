@@ -1,0 +1,2 @@
+betterlockscreen for lock screen
+nord theme for firefox
