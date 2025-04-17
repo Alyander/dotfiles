@@ -1,0 +1,22 @@
+[window]
+
+opacity = 0.5
+
+padding.x = 10
+padding.y = 10
+
+decorations = "Full"
+decorations_theme_variant = "Light" # "Dark"
+
+[font]
+
+normal.family = "Noto Sans Mono"
+bold.family = "Noto Sans Mono"
+italic.family = "Noto Sans Mono"
+bold_italic.family = "Noto Sans Mono"
+
+size = 10.0
+
+
+[colors.primary]
+background = "#202124"
