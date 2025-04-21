@@ -113,7 +113,10 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+mytextclock = wibox.widget{
+    format = '%a %b %d %H:%M',
+    widget = wibox.widget.textclock
+}
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -175,7 +178,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 ", " 10 " }, s, awful.layout.layouts[1])
+    awful.tag({ " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 ", " 10 "}, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -215,16 +218,19 @@ awful.screen.connect_for_each_screen(function(s)
             },
             id     = 'background_role',
             widget = wibox.container.background,
-            create_callback = function(self, c, index, objects) -- можно удалить, если не нужно
-                self:get_children_by_id('text_role')[1].markup = "<b>" .. c.name .. "</b>"
-            end,
         },
     }
     
 
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
-    
+    s.systray = wibox.widget.systray()
+    s.systray_with_margin = wibox.container.margin(s.systray, 0, 3, 4, 0)
+    s.systray.base_size = 15
+    s.space = wibox.container.margin(wibox.widget{
+        markup = "|",
+        widget = wibox.widget.textbox
+        }, 3, 3, 0, 0)
     
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -237,9 +243,12 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist,
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            s.systray_with_margin,
+            s.space,
             mykeyboardlayout,
-            wibox.widget.systray(),
+            s.space,
             mytextclock,
+            s.space,
             s.mylayoutbox,
         },
     }
@@ -248,7 +257,7 @@ end)
 
 -- {{{ Mouse bindings
 root.buttons(gears.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
+    -- awful.button({ }, 3, function () mymainmenu:toggle() end),
     awful.button({ }, 4, awful.tag.viewnext),
     awful.button({ }, 5, awful.tag.viewprev)
 ))
@@ -562,46 +571,6 @@ client.connect_signal("manage", function (c)
         awful.placement.no_offscreen(c)
     end
 end)
-
--- Add a titlebar if titlebars_enabled is set to true in the rules.
--- client.connect_signal("request::titlebars", function(c)
---     -- buttons for the titlebar
---     local buttons = gears.table.join(
---         awful.button({ }, 1, function()
---             c:emit_signal("request::activate", "titlebar", {raise = true})
---             awful.mouse.client.move(c)
---         end),
---         awful.button({ }, 3, function()
---             c:emit_signal("request::activate", "titlebar", {raise = true})
---             awful.mouse.client.resize(c)
---         end)
---     )
-
---     awful.titlebar(c) : setup {
---         { -- Left
---             awful.titlebar.widget.iconwidget(c),
---             buttons = buttons,
---             layout  = wibox.layout.fixed.horizontal
---         },
---         { -- Middle
---             { -- Title
---                 align  = "center",
---                 widget = awful.titlebar.widget.titlewidget(c)
---             },
---             buttons = buttons,
---             layout  = wibox.layout.flex.horizontal
---         },
---         { -- Right
---             awful.titlebar.widget.floatingbutton (c),
---             awful.titlebar.widget.maximizedbutton(c),
---             awful.titlebar.widget.stickybutton   (c),
---             awful.titlebar.widget.ontopbutton    (c),
---             awful.titlebar.widget.closebutton    (c),
---             layout = wibox.layout.fixed.horizontal()
---         },
---         layout = wibox.layout.align.horizontal
---     }
--- end)
 
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)

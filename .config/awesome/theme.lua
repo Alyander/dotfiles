@@ -44,4 +44,5 @@ theme.titlebar_bg_normal = "#2E3440"
 theme.menu_height = 20
 theme.menu_width  = 150
 theme.wibar_bg = "#213555aa"
+theme.systray_icon_spacing = 3
 return theme
