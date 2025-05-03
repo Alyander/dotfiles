@@ -364,6 +364,12 @@ globalkeys = gears.table.join(
     awful.key({modkey, "Control"}, "b", function ()
                 awful.spawn("librewolf")
             end,{description = "Librewolf", group = "client"}),
+    awful.key({modkey, "Control"}, "l", function ()
+                awful.spawn("elisa")
+            end,{description = "Elisa", group = "client"}),
+    awful.key({modkey, "Control"}, "e", function ()
+                awful.spawn("thunar")
+            end,{description = "Thunar", group = "client"}),
     awful.key({modkey, "Shift"}, "z", function ()
                 awful.spawn.easy_async("playerctl play-pause", function()
                     
