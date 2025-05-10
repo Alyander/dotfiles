@@ -1,0 +1,12 @@
+vim.g.mapleader = " "
+vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>w", "<cmd>w<cr>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>wq", "<cmd>wq<cr>", { silent = true })
+vim.api.nvim_set_keymap("n", "qq", "<cmd>q!<cr>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>NvimTreeFocus<cr>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>db", "<cmd>DapToggleBreakpoint<cr>", { silent = true })
+vim.api.nvim_set_keymap("n", "<leader>dr", "<cmd>DapContinue<cr>", { silent = true })
