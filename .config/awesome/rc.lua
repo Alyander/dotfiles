@@ -359,12 +359,10 @@ globalkeys = gears.table.join(
               end,
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"}),
     awful.key({modkey, "Control"}, "b", function ()
                 awful.spawn("librewolf")
             end,{description = "Librewolf", group = "client"}),
-    awful.key({modkey, "Control"}, "l", function ()
+    awful.key({modkey, "Control"}, "p", function ()
                 awful.spawn("alacritty -e 'cmus'")
             end,{description = "CMUS", group = "client"}),
     awful.key({modkey, "Control"}, "v", function ()
