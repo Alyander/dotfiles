@@ -1,3 +1,4 @@
+general.import = ["~/.cache/wal/colors-alacritty.toml"]
 [window]
 
 opacity = 0.5
@@ -17,6 +18,33 @@ bold_italic.family = "Noto Sans Mono"
 
 size = 10.0
 
+# [colors.primary]
+# background = "#0e1a24"  # Очень тёмный сине-чёрный (почти ночь)
+# foreground = "#dceeff"  # Светлый голубовато-белый (текст)
 
-[colors.primary]
-background = "#202124"
+# [colors.cursor]
+# text = "#0e1a24"
+# cursor = "#3392f5"  # Основной голубой
+
+# [colors.normal]
+# black   = "#0e1a24"  # Тёмный фон
+# red     = "#f15b6c"  # Мягкий кораллово-красный
+# green   = "#67d2a4"  # Аквамариново-зелёный
+# yellow  = "#f0c674"  # Золотисто-жёлтый
+# blue    = "#3392f5"  # 💠 Основной голубой
+# magenta = "#bd93f9"  # Светло-фиолетовый
+# cyan    = "#50d8eb"  # Яркий голубой с уклоном в бирюзу
+# white   = "#dceeff"  # Светлый голубой белый
+
+# [colors.bright]
+# black   = "#1a2a3c"
+# red     = "#ff6e7d"
+# green   = "#85e7ba"
+# yellow  = "#ffdd88"
+# blue    = "#5aaeff"  # Более мягкий голубой
+# magenta = "#cfa6ff"
+# cyan    = "#7fefff"
+# white   = "#ffffff"
+
+
+

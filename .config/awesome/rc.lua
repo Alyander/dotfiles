@@ -21,7 +21,7 @@ awful.spawn.easy_async("setxkbmap -model pc104 -layout us,ru,ua -option grp:alt_
 end)
 awful.spawn.easy_async("picom",function()
 end)
-awful.spawn.easy_async("feh --bg-fill /home/anatolii/walls/1394068.png",function()
+awful.spawn.easy_async("feh --bg-fill /home/anatolii/walls/wallpapersden.com_starry-landscape-4k-cool-blue-moon_3840x2160.jpg",function()
 end)
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to

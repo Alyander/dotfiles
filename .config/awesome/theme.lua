@@ -17,7 +17,7 @@ theme.font          = "Noto Sans Mono 9"
 
 -- Окна
 theme.border_width  = 2
-theme.border_normal = "#9C9C9C"  
+theme.border_normal = "#4c566a"  
 theme.border_focus  = "#3b72cc"  
 theme.border_marked = "#D08770"  
 
