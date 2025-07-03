@@ -40,6 +40,7 @@ static const Rule rules[] = {
 	{"Thunar", NULL, NULL, 0, 1, -1},
 	{"pavucontrol", NULL, NULL, 0, 1, -1},
 	{"librewolf", NULL, "Библиотека", 0, 1, -1},
+	{"feh", NULL, NULL, 0, 1, -1},
 };
 
 /* layout(s) */
@@ -76,6 +77,7 @@ static const char *Playercmd[]  = { "alacritty", "-e", "cmus", NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_l,      spawn,          SHCMD("betterlockscreen -l") },
 	{ MODKEY|ShiftMask,                       XK_d,      spawn,          {.v = roficmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ControlMask,             XK_b, spawn,          {.v = browsercmd } },
