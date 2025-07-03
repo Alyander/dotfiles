@@ -3,4 +3,6 @@
 
 //@theme "/home/anatolii/.local/share/rofi/themes/spotlight.rasi"
 
-@theme "/home/anatolii/.local/share/rofi/themes/spotlight-dark.rasi"
+//@theme "/home/anatolii/.local/share/rofi/themes/spotlight-dark.rasi"
+
+@theme "/home/anatolii/.local/share/rofi/themes/nord.rasi"
