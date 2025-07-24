@@ -13,8 +13,8 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Jetbrains Mono Nerd Font:size=10" };
-static const char dmenufont[]       = "Jetbrains Mono Nerd Font:size=10";
+static const char *fonts[]          = { "JetbrainsMono Nerd Font:size=11" };
+static const char dmenufont[]       = "JetbrainsMono Nerd Font:size=11";
 static const char col_gray1[]       = "#212335";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -23,10 +23,10 @@ static const char col_cyan[]        = "#81a1c1";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
-};
+		[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	};
 
-/* tagging */
+	/* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
@@ -83,7 +83,7 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,             XK_b, spawn,          {.v = browsercmd } },
 	{ MODKEY|ControlMask,             XK_p, spawn,          {.v = Playercmd } },
 	{ ShiftMask, XK_Alt_L, spawn, SHCMD("pkill -RTMIN+30 dwmblocks") },
-	{ MODKEY|ShiftMask, XK_a, spawn, SHCMD(" amixer sset Master 5%+&& pkill -RTMIN+20 dwmblocks") },
+	{ MODKEY|ShiftMask, XK_a, spawn, SHCMD(" amixer sset Master 5%+ && pkill -RTMIN+20 dwmblocks") },
 	{ MODKEY|ShiftMask, XK_x, spawn, SHCMD("amixer sset Master 5%- && pkill -RTMIN+20 dwmblocks") },
 	{ MODKEY|ShiftMask, XK_z, spawn, SHCMD("playerctl play-pause") },
 	{ MODKEY|ShiftMask, XK_s, spawn, SHCMD("flameshot gui") },
