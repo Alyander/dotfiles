@@ -77,7 +77,7 @@ static const char *Playercmd[]  = { "alacritty", "-e", "cmus", NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_l,      spawn,          SHCMD("betterlockscreen -l") },
+	{ MODKEY|ControlMask,                       XK_l,      spawn,          SHCMD("betterlockscreen -l") },
 	{ MODKEY|ShiftMask,                       XK_d,      spawn,          {.v = roficmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ControlMask,             XK_b, spawn,          {.v = browsercmd } },
