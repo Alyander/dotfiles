@@ -70,10 +70,10 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "wezterm", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 static const char *browsercmd[]  = { "librewolf", NULL };
 static const char *roficmd[]  = { "rofi", "-show", "drun", NULL };
-static const char *Playercmd[]  = { "alacritty", "-e", "cmus", NULL };
+static const char *Playercmd[]  = { "kitty", "-e", "cmus", NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,                       XK_p,      spawn,          {.v = dmenucmd } },
@@ -82,13 +82,13 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ControlMask,             XK_b, spawn,          {.v = browsercmd } },
 	{ MODKEY|ControlMask,             XK_p, spawn,          {.v = Playercmd } },
-	{ MODKEY|ControlMask,             XK_v, spawn,          SHCMD("wezterm -e 'you_cli'") },
+	{ MODKEY|ControlMask,             XK_v, spawn,          SHCMD("kitty -e 'you_cli'") },
 	{ ShiftMask, XK_Alt_L, spawn, SHCMD("pkill -RTMIN+30 dwmblocks") },
 	{ MODKEY|ShiftMask, XK_a, spawn, SHCMD(" amixer sset Master 5%+ && pkill -RTMIN+20 dwmblocks") },
 	{ MODKEY|ShiftMask, XK_x, spawn, SHCMD("amixer sset Master 5%- && pkill -RTMIN+20 dwmblocks") },
 	{ MODKEY|ShiftMask, XK_z, spawn, SHCMD("playerctl play-pause") },
 	{ MODKEY|ShiftMask, XK_s, spawn, SHCMD("flameshot gui") },
-	{ MODKEY|ControlMask, XK_e, spawn, SHCMD("wezterm -e 'yazi'") },
+	{ MODKEY|ControlMask, XK_e, spawn, SHCMD("kitty -e 'yazi'") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
