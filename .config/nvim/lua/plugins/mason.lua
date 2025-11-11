@@ -13,7 +13,7 @@ return {
 		},
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "pyright", "ts_ls", "emmet_ls", "jdtls" },
+				ensure_installed = { "lua_ls", "pyright", "ts_ls", "emmet_ls", "jdtls", "tailwindcss" },
 			})
 		end,
 	},
@@ -37,12 +37,5 @@ return {
 			})
 		end,
 	},
-	{
-		"LittleEndianRoot/mason-conform",
-		config = function()
-			require("mason-conform").setup({
-				-- ensure_installed = { "stylua", "prettier", "clang-format" },
-			})
-		end,
-	},
+
 }

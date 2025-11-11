@@ -30,7 +30,7 @@ return {
       jdtls = {},
       ts_ls = {},
       emmet_ls = {},
-      ruff = {},
+      tailwindcss = {},
     }
   },
   config = function(_, opts)
