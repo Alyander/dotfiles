@@ -70,7 +70,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "kitty","--single-instance", NULL };
 static const char *browsercmd[]  = { "librewolf", NULL };
 static const char *roficmd[]  = { "rofi", "-show", "drun", NULL };
 static const char *Playercmd[]  = { "alacritty", "-e", "cmus", NULL };
@@ -82,7 +82,6 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ControlMask,             XK_b, spawn,          {.v = browsercmd } },
 	{ MODKEY|ControlMask,             XK_p, spawn,          {.v = Playercmd } },
-	{ MODKEY|ControlMask,             XK_v, spawn,          SHCMD("alacritty -e 'you_cli'") },
 	{ ShiftMask, XK_Alt_L, spawn, SHCMD("pkill -RTMIN+30 dwmblocks") },
 	{ MODKEY|ShiftMask, XK_a, spawn, SHCMD(" amixer sset Master 5%+ && pkill -RTMIN+20 dwmblocks") },
 	{ MODKEY|ShiftMask, XK_x, spawn, SHCMD("amixer sset Master 5%- && pkill -RTMIN+20 dwmblocks") },
