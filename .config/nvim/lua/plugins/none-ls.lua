@@ -13,7 +13,7 @@ return {
       cpp = {"cpplint"},
       javascriptreact = { "eslint_d" },
       typescriptreact = { "eslint_d" },
-      python = { "ruff", 'mypy' },
+      python = { "pylint" },
       java = {"checkstyle"},
 
     }

@@ -29,7 +29,7 @@ return {
       clangd = {},
       jdtls = {},
       ts_ls = {},
-      emmet_ls = {},
+      emmet_langugage_server = {},
       tailwindcss = {},
     }
   },

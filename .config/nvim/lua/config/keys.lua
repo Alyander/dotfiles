@@ -40,4 +40,3 @@ end, { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>mm', "<Cmd>MarkdownPreviewToggle<CR>", { desc = 'MarkdownPreview' })
 vim.keymap.set('n', '<leader>tb', "<Cmd>DapToggleBreakpoint<CR>", {desc = "Toggle breakpoint"})
 vim.keymap.set('n', '<leader>dc', "<Cmd>DapContinue<CR>", {desc = "start debug"})
-
