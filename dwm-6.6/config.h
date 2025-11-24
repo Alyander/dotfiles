@@ -73,7 +73,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "kitty","--single-instance", NULL };
 static const char *browsercmd[]  = { "librewolf", NULL };
 static const char *roficmd[]  = { "rofi", "-show", "drun", NULL };
-static const char *Playercmd[]  = { "alacritty", "-e", "cmus", NULL };
+static const char *Playercmd[]  = { "kitty", "-e", "cmus", NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,                       XK_p,      spawn,          {.v = dmenucmd } },
