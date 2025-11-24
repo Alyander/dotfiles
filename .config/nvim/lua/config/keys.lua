@@ -1,42 +1,104 @@
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
-vim.keymap.set('n', '<leader>er', builtin.diagnostics, { desc = 'Telescope diagnostics' })
-vim.keymap.set('n', '<leader>df', builtin.lsp_definitions, { desc = 'Telescope lsp_definitions' })
--- NEOTREE
-vim.keymap.set('n', '<leader>ee', "<cmd>Neotree float source=filesystem toggle<cr>", { desc = 'Neotree filesystem' })
-vim.keymap.set('n', '<leader>ge', "<cmd>Neotree float git_status toggle<cr>", { desc = 'Neotree git_status' })
-local map = vim.api.nvim_set_keymap
+------------------------------------------------------------
+-- SETTINGS / UTILS
+------------------------------------------------------------
+local map  = vim.keymap.set
 local opts = { noremap = true, silent = true }
-map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
-map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
-map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
-map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
-map('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', opts)
-map('n', '<A-2>', '<Cmd>BufferGoto 2<CR>', opts)
-map('n', '<A-3>', '<Cmd>BufferGoto 3<CR>', opts)
-map('n', '<A-4>', '<Cmd>BufferGoto 4<CR>', opts)
-map('n', '<A-5>', '<Cmd>BufferGoto 5<CR>', opts)
-map('n', '<A-6>', '<Cmd>BufferGoto 6<CR>', opts)
-map('n', '<A-7>', '<Cmd>BufferGoto 7<CR>', opts)
-map('n', '<A-8>', '<Cmd>BufferGoto 8<CR>', opts)
-map('n', '<A-9>', '<Cmd>BufferGoto 9<CR>', opts)
-map('n', '<A-0>', '<Cmd>BufferLast<CR>', opts)
-map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
-map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
-map('n', '<C-p>',   '<Cmd>BufferPick<CR>', opts)
-map('n', '<C-s-p>', '<Cmd>BufferPickDelete<CR>', opts)
-map('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
-map('n', '<Space>bn', '<Cmd>BufferOrderByName<CR>', opts)
-map('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', opts)
-map('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', opts)
-map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
-vim.keymap.set('n', "<leader>ca", function()
-	require("tiny-code-action").code_action()
+
+------------------------------------------------------------
+-- TELESCOPE
+------------------------------------------------------------
+local telescope = require('telescope.builtin')
+
+map('n', '<leader>ff', telescope.find_files,      { desc = 'Telescope: find files' })
+map('n', '<leader>fg', telescope.live_grep,       { desc = 'Telescope: live grep' })
+map('n', '<leader>fb', telescope.buffers,         { desc = 'Telescope: buffers' })
+map('n', '<leader>fh', telescope.help_tags,       { desc = 'Telescope: help tags' })
+map('n', '<leader>er', telescope.diagnostics,     { desc = 'Telescope: diagnostics' })
+map('n', '<leader>df', telescope.lsp_definitions, { desc = 'Telescope: LSP definitions' })
+------------------------------------------------------------
+-- NEOTREE
+------------------------------------------------------------
+map('n', '<leader>ee', "<cmd>Neotree float source=filesystem toggle<cr>",
+    { desc = 'Neotree: filesystem' })
+
+map('n', '<leader>ge', "<cmd>Neotree float git_status toggle<cr>",
+    { desc = 'Neotree: git status' })
+
+
+------------------------------------------------------------
+-- BUFFERLINE
+------------------------------------------------------------
+map('n', '<A-1>', "<cmd>BufferLineGoToBuffer 1<cr>", opts)
+map('n', '<A-2>', "<cmd>BufferLineGoToBuffer 2<cr>", opts)
+map('n', '<A-3>', "<cmd>BufferLineGoToBuffer 3<cr>", opts)
+map('n', '<A-4>', "<cmd>BufferLineGoToBuffer 4<cr>", opts)
+map('n', '<A-5>', "<cmd>BufferLineGoToBuffer 5<cr>", opts)
+map('n', '<A-6>', "<cmd>BufferLineGoToBuffer 6<cr>", opts)
+map('n', '<A-7>', "<cmd>BufferLineGoToBuffer 7<cr>", opts)
+map('n', '<A-8>', "<cmd>BufferLineGoToBuffer 8<cr>", opts)
+map('n', '<A-9>', "<cmd>BufferLineGoToBuffer 9<cr>", opts)
+map('n', '<A-c>', "<cmd>bdelete!<cr>", opts)
+------------------------------------------------------------
+-- LSP / CODE ACTIONS
+------------------------------------------------------------
+map('n', '<leader>aa', function()
+    require("tiny-code-action").code_action()
 end, { noremap = true, silent = true })
 
-vim.keymap.set('n', '<leader>mm', "<Cmd>MarkdownPreviewToggle<CR>", { desc = 'MarkdownPreview' })
-vim.keymap.set('n', '<leader>tb', "<Cmd>DapToggleBreakpoint<CR>", {desc = "Toggle breakpoint"})
-vim.keymap.set('n', '<leader>dc', "<Cmd>DapContinue<CR>", {desc = "start debug"})
+------------------------------------------------------------
+-- MARKDOWN PREVIEW
+------------------------------------------------------------
+map('n', '<leader>mm', "<Cmd>MarkdownPreviewToggle<CR>", { desc = 'Markdown Preview' })
+
+------------------------------------------------------------
+-- DEBUGGING (DAP)
+------------------------------------------------------------
+map('n', '<leader>tb', "<Cmd>DapToggleBreakpoint<CR>", { desc = "DAP: toggle breakpoint" })
+map('n', '<leader>dc', "<Cmd>DapContinue<CR>",         { desc = "DAP: continue/start" })
+
+------------------------------------------------------------
+-- TERMINAL
+------------------------------------------------------------
+map('n', '<leader>tt',"<cmd>terminal<cr>", opts)
+map('t', '<Esc>', "<C-\\><C-n>", opts)
+
+------------------------------------------------------------
+-- WINDOW MANAGEMENT
+------------------------------------------------------------
+
+-- navigation
+map('n', '<C-h>', '<C-w>h', opts)
+map('n', '<C-j>', '<C-w>j', opts)
+map('n', '<C-k>', '<C-w>k', opts)
+map('n', '<C-l>', '<C-w>l', opts)
+
+-- splits
+map('n', 'ss', ':split<CR>',  opts)
+map('n', 'sv', ':vsplit<CR>', opts)
+
+-- close / focus
+map('n', 'sc', '<C-w>c', opts)
+map('n', 'so', '<C-w>o', opts)
+
+-- resize
+map('n', '<C-Up>',    ':resize +2<CR>',           opts)
+map('n', '<C-Down>',  ':resize -2<CR>',           opts)
+map('n', '<C-Left>',  ':vertical resize -2<CR>',  opts)
+map('n', '<C-Right>', ':vertical resize +2<CR>',  opts)
+
+-- alternative tmux-like resize
+map('n', '<A-h>', '<C-w><', opts)
+map('n', '<A-l>', '<C-w>>', opts)
+map('n', '<A-j>', '<C-w>+', opts)
+map('n', '<A-k>', '<C-w>-', opts)
+
+-- move windows (swap)
+map('n', '<leader>wh', '<C-w>H', opts)
+map('n', '<leader>wj', '<C-w>J', opts)
+map('n', '<leader>wk', '<C-w>K', opts)
+map('n', '<leader>wl', '<C-w>L', opts)
+
+------------------------------------------------------------
+-- END OF CONFIG
+------------------------------------------------------------
+
