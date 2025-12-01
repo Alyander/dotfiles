@@ -27,7 +27,6 @@ return {
       lua_ls = {},
       pyright = {},
       clangd = {},
-      jdtls = {},
       ts_ls = {},
       emmet_langugage_server = {},
       tailwindcss = {},

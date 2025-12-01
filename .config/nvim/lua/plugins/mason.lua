@@ -13,7 +13,7 @@ return {
 		},
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "pyright", "ts_ls", "emmet_language_server", "tailwindcss" },
+				ensure_installed = { "lua_ls", "pyright", "ts_ls", "emmet_language_server", "tailwindcss", "clangd"},
 			})
 		end,
 	},

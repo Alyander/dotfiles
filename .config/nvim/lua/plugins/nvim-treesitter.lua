@@ -2,7 +2,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     config = function ()
         require'nvim-treesitter.configs'.setup {
-            ensure_installed = { "c", "markdown", "javascript", "html", "css", "typescript", "java", "python", "cpp"},
+            ensure_installed = { "c", "markdown", "javascript", "html", "css", "typescript", "java", "python", "cpp", "bash", "sql"},
               highlight = {
     enable = true,              -- включить подсветку
     disable = {},               -- можно добавить типы файлов, для которых отключить подсветку
