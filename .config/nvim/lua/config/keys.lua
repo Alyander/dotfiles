@@ -59,7 +59,7 @@ map('n', '<leader>dc', "<Cmd>DapContinue<CR>",         { desc = "DAP: continue/s
 ------------------------------------------------------------
 -- TERMINAL
 ------------------------------------------------------------
-map('n', '<leader>tt',"<cmd>terminal<cr>", opts)
+map('n', '<leader>tt',"<cmd>ToggleTerm direction=float<cr>", opts)
 map('t', '<Esc>', "<C-\\><C-n>", opts)
 
 ------------------------------------------------------------

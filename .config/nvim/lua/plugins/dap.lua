@@ -12,7 +12,7 @@ return {
 			local dap = require("dap")
 			local dapui = require("dapui")
 			dapui.setup()
-
+            -- require("nvim-dap-virtual-text").setup()
 			dap.listeners.after.event_initialized["dapui_config"] = function()
 				dapui.open()
 			end

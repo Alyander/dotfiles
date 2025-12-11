@@ -1,7 +1,6 @@
 return {
     "rachartier/tiny-inline-diagnostic.nvim",
-    event = "VeryLazy",
-    priority = 1000,
+    cmd = {"TID"},
     config = function()
         require("tiny-inline-diagnostic").setup({
             preset = "minimal",

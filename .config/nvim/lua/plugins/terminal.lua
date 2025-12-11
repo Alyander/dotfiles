@@ -1,8 +1,7 @@
 return {
-    "niuiic/terminal.nvim",
+	"niuiic/terminal.nvim",
 
-    config = function ()
-        require("terminal").setup()
-
-    end
+	config = function()
+		require("terminal").setup()
+	end,
 }
