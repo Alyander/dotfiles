@@ -3,6 +3,7 @@ static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/  
 	{"󰓃:", "amixer sget Master | awk -F'[][]' '/Left:/ { print $2 }'",					1,		20},
   {" :", "xkblayout-state print '%s'",					1,		30},
+  {" :", "/home/anatolii/.dwm/to2026.py", 5,0},
   {"", "date '+%d/%m/%Y %H:%M'",					5,		0},
  };
 
