@@ -1,8 +1,6 @@
 
-//@theme "/home/anatolii/.local/share/rofi/themes/spotlight-dark.rasi"
+//@theme "/home/anatolii/.local/share/rofi/themes/pywal.rasi"
 
-//@theme "/home/anatolii/.local/share/rofi/themes/spotlight.rasi"
+//@theme "/usr/share/rofi/themes/Adapta-Nokto.rasi"
 
-//@theme "/home/anatolii/.local/share/rofi/themes/spotlight-dark.rasi"
-
-@theme "/home/anatolii/.local/share/rofi/themes/nord.rasi"
+@theme "/home/anatolii/.local/share/rofi/themes/spotlight-dark.rasi"

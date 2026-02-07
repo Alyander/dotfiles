@@ -4,12 +4,12 @@
 * {
     font:   "Montserrat 12";
 
-    bg0:    #242424E6;
-    bg1:    #7E7E7E80;
-    bg2:    #3e77bdB3;
+    bg0:    #00081B;
+    bg1:     #497892;
+    bg2:    #1FB1CA;
 
-    fg0:    #DEDEDE;
-    fg1:    #FFFFFF;
+    fg0:    #c8ecef;
+    fg1:    #000;
     fg2:    #DEDEDE80;
 
     background-color:   transparent;
@@ -26,6 +26,8 @@ window {
     location:       center;
     width:          640;
     border-radius:  8;
+    border:1;
+    border-color:#1091B0;
 }
 
 inputbar {

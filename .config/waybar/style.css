@@ -1,0 +1,31 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.50);
+    color: #1FB1CA;
+    /* transition: all 0.5s ease; */
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+#workspaces {
+    padding: 0;
+    margin: 0;
+    margin-right: 5px;
+}
+#workspaces button {
+    padding: 0 3px;
+    margin: 0;
+}
+#workspaces button.active {
+    color: #000;
+    background-color: #1FB1CA;
+}
+#clock {
+    margin-right: 5px;
+}

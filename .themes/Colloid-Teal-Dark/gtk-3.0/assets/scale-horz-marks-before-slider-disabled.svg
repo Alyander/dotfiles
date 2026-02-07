@@ -4,7 +4,7 @@
    <stop stop-color="#009688" stop-opacity=".25" offset="1"/>
   </linearGradient>
   <linearGradient id="color-surface" x1="4" x2="19.997" y1="4" y2="4" gradientTransform="rotate(45,12,12)" gradientUnits="userSpaceOnUse">
-   <stop stop-color="#ffffff" offset="1"/>
+   <stop stop-color="#FFFFFF" offset="1"/>
   </linearGradient>
  </defs>
  <g id="scale-slider">
