@@ -1,0 +1,20 @@
+{
+    "redhat.telemetry.enabled": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.productIconTheme": "material-product-icons",
+    "workbench.colorTheme": "Tidelight Deep",
+    "workbench.statusBar.visible": false,
+    "window.menuBarVisibility": "toggle",
+    "window.commandCenter": false,
+    "workbench.layoutControl.enabled": false,
+    "editor.scrollbar.horizontal": "hidden",
+"editor.scrollbar.vertical": "hidden",
+"editor.minimap.enabled": false,
+"editor.matchBrackets": "never",
+"editor.occurrencesHighlight": "off",
+"editor.overviewRulerBorder": false,
+"editor.hideCursorInOverviewRuler": true,
+"editor.stickyScroll.enabled": false,
+
+    
+}
